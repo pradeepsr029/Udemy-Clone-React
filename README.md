@@ -13,6 +13,5 @@ Learn to build Udemy Web Clone with ReactJS. ... This is a front to back `Udemy 
 
 The project Template can be used to build bigger projects
 
-Live Application URL
+# For More Project
 https://github.com/pradeepsrawat029
-This URL has the application deployed in
