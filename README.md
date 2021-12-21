@@ -5,11 +5,11 @@ Learn to build Udemy Web Clone with ReactJS. ... This is a front to back `Udemy 
 
 # This Project is a Simple ReactJS Project which demonstrates the following
 
-`Creating a Component in React`
-`Making HTTP calls`
-`Communicating between parent and child component`
-`Using Bootstrap along with React`
-`Using Basic Routing in React`
+1. Creating a `Component in React` 
+2. Making `HTTP` calls
+3. Communicating between `parent and child component`
+4. Using `Bootstrap` along with React
+4. Using Basic `Routing` in React
 
 The project Template can be used to build bigger projects
 
