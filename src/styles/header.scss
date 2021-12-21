@@ -1,0 +1,50 @@
+.component--header{
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+    z-index: 1010;
+    header{
+        background: #fff;
+        height: 4rem;
+        padding: 0 2.4rem;
+        position: relative;
+        z-index: 1010;
+    }
+    .app-logo{
+        height: 38px;
+        width: 100px;
+        position: relative;
+    }
+}
+.search-form-autocompleter{
+    padding: 0 1.5rem;
+    input{
+        width: 100%;
+        height: 45px;
+        border: 1px solid #1c1d1f;
+        border-radius: 9999px;
+        background-color: #f7f9fa;
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+.menu-nav-list{
+    font-size: 15px;
+    .btn-menu{
+        display: inline-block;
+        padding-left: 15px;
+    }
+    a:hover{
+        color: #401b9c;
+    }
+}
+.sign-btn{
+
+}
+.login-btn, .sign-btn{
+    a{
+        border-radius: inherit;
+    }
+    a:hover{
+        color: inherit;
+        background-color: inherit;
+    }
+}

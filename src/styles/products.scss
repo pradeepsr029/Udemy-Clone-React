@@ -1,0 +1,16 @@
+.inner-list{
+    float: left;
+    padding: 15px;
+    .cover-view-product{
+        background-color: #efefef;
+        padding: 15px;
+        border: 1px solid #bbbbbb;
+    }
+    .pro-picture{
+        padding: 100px;
+        background-color: orange;
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+}

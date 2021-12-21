@@ -1,0 +1,55 @@
+.popper--popper{
+    border: 1px solid #cdcdcd;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+    .course-card{
+        .course-card--image{
+            position: relative;
+            padding-bottom: 50%;
+            background-color: #c7c7c7;
+        }
+    }
+}
+.popper--popper:hover{
+    box-shadow: 0px 2px 2px #e5e5e5;
+    transform: scale(1.05);
+}
+.course-card--main-content{
+    margin-top: 10px;
+    font-size: 14px;
+    padding: 12px;
+    div:not(:last-child){
+        margin-bottom: 5px;
+    }
+    .course-category{
+        color: #979797;
+        font-size: 13px;
+        text-transform: capitalize;
+    }
+}
+.price-number{
+    font-weight: 600;
+}
+.star-rating{
+    .rating{
+        display: inline-block;
+        color: #fff;
+        padding: 2px 4px 2px 6px;
+        border-radius: 3px;
+        font-weight: 500;
+        font-size: 12px;
+        vertical-align: middle;
+        background-color: #388e3c;
+    }
+    .review{
+        margin-left: 10px;
+        font-weight: 600;
+        font-size: 13px;
+        color: #646464;
+    }
+}
+.delete-card{
+    padding-left: 10px;
+    transform: scale(0.8);
+}
