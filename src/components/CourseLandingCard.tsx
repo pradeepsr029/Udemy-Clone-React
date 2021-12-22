@@ -1,8 +1,9 @@
 import React, { memo } from 'react';
+import { ICourse } from '../model';
 import { VIDEO_NEUTRAL_LIST } from '../shared/constants/appConstant';
 import '../styles/courseLandingCard.scss';
 
-const CourseLandingCard = memo((props: any) => {
+const CourseLandingCard = memo((props: { course: ICourse | null }) => {
     function neutralListRender(data: any, key: number) {
         return (
             <li key={key}>

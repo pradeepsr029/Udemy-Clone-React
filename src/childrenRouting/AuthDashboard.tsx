@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import CourseDetails from '../containers/CourseDetails';
 import Home from '../containers/Home';
 import NotFound from '../containers/NotFound';
+import ShoppingCart from '../containers/ShoppingCart';
 
 class AuthDashboard extends Component {
     constructor(props: any) {
@@ -21,6 +22,7 @@ class AuthDashboard extends Component {
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/course/:id" element={<CourseDetails />} />
+                            <Route path="/cart" element={<ShoppingCart />} />
                             <Route path="*" element={<NotFound />} />
                         </Routes>
                     </div>

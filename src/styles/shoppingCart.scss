@@ -1,0 +1,32 @@
+.shop-row{
+    margin-top: 4rem;  
+    font-size: 16px;
+}
+.added-course-count{
+    margin-top: 2rem;
+}
+.sc-shopping-list{
+    box-shadow: 0 0 2px #d1d7dc;
+    padding: 24px;
+    margin-bottom: 3rem;
+    .sc-shopping-list--empty{
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+        text-align: center;
+        p{
+            margin: 0 0 10.5px;
+            font-size: 14px;
+        }
+        .btn-primary{
+            color: #fff;
+            border-radius: 0;
+            padding: 10px 12px;
+            background-color: #a435f0;
+            border: 1px solid transparent;
+            font-weight: 600;
+        }
+    }
+}

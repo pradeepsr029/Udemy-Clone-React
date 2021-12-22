@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { ICallbackEvent, ICourse } from '../model';
+import axios, { AxiosResponse } from 'axios';
 import Carousel from '../components/Carousel';
 import CourseCard from '../components/CourseCard';
 import '../styles/home.scss';
 
-class Home extends Component<any, any> {
+class Home extends Component<any, { courses: ICourse[], isApiCallInProgress: boolean }> {
 
     constructor(props: any) {
         super(props);
@@ -23,14 +25,14 @@ class Home extends Component<any, any> {
      * @summary Get Courses listing from http
      */
     private getCoursesList() {
-        fetch("https://fakestoreapi.com/products").then(res => res.json()).then((result) => {
-            this.setState({ courses: result, isApiCallInProgress: false })
-        }, (error) => {
+        axios.get('https://fakestoreapi.com/products').then((response: AxiosResponse) => {
+            this.setState({ courses: response.data, isApiCallInProgress: false })
+        }).catch(err => {
             this.setState({ isApiCallInProgress: false })
-        })
+        });
     }
 
-    private courseComponentCallbackEvent(event: any, index: number) {
+    private courseComponentCallbackEvent(event: ICallbackEvent, index: number) {
         switch (event.type) {
             case 'DELETE':
                 this.deleteCourse(index);
@@ -43,7 +45,7 @@ class Home extends Component<any, any> {
     private deleteCourse(deleteIndex: number) {
         const courses = this.state.courses;
         courses.splice(deleteIndex, 1);
-        this.setState({ course: courses });
+        this.setState({ courses: courses });
     }
 
     private dataLoading() {
@@ -52,8 +54,8 @@ class Home extends Component<any, any> {
         </div>)
     }
 
-    private courseComponentRendered(courses: any) {
-        return courses.map((course: any, index: number) => {
+    private courseComponentRendered(courses: ICourse[]) {
+        return courses.map((course: ICourse, index: number) => {
             return <div key={course.id} className='col-3'>
                 <Link to={`course/${course.id}`} title={course.title} rel="noopener noreferrer">
                     <CourseCard courseCallback={(body: any) => this.courseComponentCallbackEvent(body, index)} course={course} />
@@ -63,7 +65,7 @@ class Home extends Component<any, any> {
     }
 
     render() {
-        const { courses, isApiCallInProgress }: any = this.state;
+        const { courses, isApiCallInProgress } = this.state;
         return (
             <React.Fragment>
                 <div className='container main-container'>

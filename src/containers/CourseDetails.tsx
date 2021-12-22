@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { useParams } from 'react-router-dom';
+import axios, { AxiosResponse } from 'axios';
 import CourseClipLead from '../components/CourseClipLead';
 import CourseLandingCard from '../components/CourseLandingCard';
 import { VIDEO_FULL_INFO } from '../shared/constants/appConstant';
+import { ICourse } from '../model';
 import '../styles/courseDetails.scss';
 
-class CourseDetails extends Component {
+class CourseDetails extends Component<any, { details: ICourse | null, isApiCallInProgress: boolean }> {
     constructor(props: any) {
         super(props);
         this.state = {
@@ -22,16 +24,15 @@ class CourseDetails extends Component {
     }
 
     private getCourseFullDetails(id: any) {
-        fetch(`https://fakestoreapi.com/products/${id}`).then(res => res.json()).then((result) => {
-            this.setState({ details: result, isApiCallInProgress: false });
-            console.log(this.state)
-        }, (error) => {
-            this.setState({ isApiCallInProgress: false })
-        })
+        axios.get(`https://fakestoreapi.com/products/${id}`).then((response: AxiosResponse) => {
+            this.setState({ details: response.data, isApiCallInProgress: false });
+        }).catch(err => {
+            this.setState({ isApiCallInProgress: false });
+        });
     }
 
     render() {
-        const { details, isApiCallInProgress }: any = this.state;
+        const { details, isApiCallInProgress } = this.state;
 
         function videoFullDescription(data: any, key: number) {
             return (<li key={key} className='dft list-view-info'>

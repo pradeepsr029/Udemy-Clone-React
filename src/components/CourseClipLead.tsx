@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
+import { ICourse } from '../model';
 import '../styles/courseClipLead.scss';
 
-const CourseClipLead = memo((props: any) => {
+const CourseClipLead = memo((props: { course: ICourse | null }) => {
     return (
         <div className='clp-lead'>
             <h1 className='clp-title'>{props?.course?.title}</h1>

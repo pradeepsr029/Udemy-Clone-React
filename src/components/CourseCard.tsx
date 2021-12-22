@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
+import { ICourse } from '../model/course.model';
 import '../styles/courseCard.scss';
 
-const CourseCard = memo((props: any) => {
+const CourseCard = memo((props: { course: ICourse, courseCallback: any }) => {
     function deleteCourse(event: any) {
         props.courseCallback({ type: 'DELETE', body: props.course });
         event.preventDefault();

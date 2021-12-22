@@ -36,16 +36,20 @@
         color: #401b9c;
     }
 }
-.sign-btn{
 
-}
-.login-btn, .sign-btn{
+.login-btn, .sign-btn, .card-btn{
     a{
         border-radius: inherit;
     }
     a:hover{
         color: inherit;
         background-color: inherit;
+    }
+}
+.card-btn{
+    a{
+        border: none;
+        box-shadow: none!important;
     }
 }
 
