@@ -1,0 +1,26 @@
+.loginbox-v4__content{
+    flex: 1 0 auto;
+    height: 60vh;
+    padding-top: 10rem;
+}
+.modal-content-wrapper{
+    color: #1c1d1f;
+    width: 400px;
+    margin: 24px auto;
+    max-width: 100%;
+    border: 1px solid #dbdbdb;
+    padding: 15px;
+    box-shadow: 0 0 2px #e1e1e1;
+    input{
+        padding: 12px;
+        margin-bottom: 10px;
+    }
+    button{
+        width: 100%;
+        border-radius: 0;
+        padding: 12px 0;
+        color: #fff;
+        background-color: #a435f0!important;
+        border: 1px solid transparent;
+    }
+}

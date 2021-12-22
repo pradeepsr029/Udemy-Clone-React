@@ -2,17 +2,18 @@
     margin-top: 5px;
 }
 .skills-hub-unit{
-    margin-top: 2em;
     border: 1px solid #d1d7dc;
     padding: 3.2rem;
-    .headshot-banner{
-        p{
-            color: #838383;
-            font-size: 15px;
-        }
+}
+.headshot-banner{
+    p{
+        color: #838383;
+        font-size: 15px;
     }
 }
-
+.outer-box-heading{
+    margin-top: 2em;
+}
 .course-unit-container{
     margin-top: 2em;
     .col-3{

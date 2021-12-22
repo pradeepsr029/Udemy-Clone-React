@@ -1,0 +1,77 @@
+.sidebar-container-group{
+    min-height: 20rem;
+    z-index: 1;
+    border-bottom: 1px solid #d1d7dc;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+    background-color: #fff;
+    .intro-asset--wrapper{
+        .intro-asset--asset{
+            position: relative;
+            padding-bottom: 55%;
+        }
+    }
+}
+
+.purchase-section{
+    color: #1c1d1f;
+    padding: 2.4rem;
+    .price-section{
+        color: #1c1d1f;
+        font-weight: 600;
+    }
+}
+.buy-card-section{
+    button{
+        width: 100%;
+        color: #000;
+        height: 46px;
+        margin-top: 10px;
+        font-weight: 600;
+        border-color: transparent;
+        border-radius: 0;
+    }
+    button:first-child{
+        background-color: #a435f0!important;
+        color: #fff!important;
+    }
+    button:last-child{
+       border-color: #000;
+    }
+    button:hover{
+        background-color: inherit;
+        color: inherit;
+    }
+}
+.money-back-guarantee{
+    font-size: 12px;
+    text-align: center;
+    color: #464646;
+    padding: 10px 0;;
+}
+
+.incentives--incentives{
+    .incentives--header{
+        font-size: 16px;
+        margin-top: 15px;
+    }
+    ul,li{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    .neutral-list{
+        padding: 5px 0;
+    }
+    .video-icon{
+        svg{
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    }
+    .video-content-txt{
+        font-size: 14px;
+    }
+}

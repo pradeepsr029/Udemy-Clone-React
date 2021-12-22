@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Carousel from '../components/Carousel';
 import CourseCard from '../components/CourseCard';
-import Header from '../components/Header';
 import '../styles/home.scss';
 
 class Home extends Component<any, any> {
@@ -55,7 +55,9 @@ class Home extends Component<any, any> {
     private courseComponentRendered(courses: any) {
         return courses.map((course: any, index: number) => {
             return <div key={course.id} className='col-3'>
-                <CourseCard courseCallback={(body: any) => this.courseComponentCallbackEvent(body, index)} course={course} />
+                <Link to={`course/${course.id}`} title={course.title} rel="noopener noreferrer">
+                    <CourseCard courseCallback={(body: any) => this.courseComponentCallbackEvent(body, index)} course={course} />
+                </Link>
             </div>
         })
     }
@@ -64,10 +66,13 @@ class Home extends Component<any, any> {
         const { courses, isApiCallInProgress }: any = this.state;
         return (
             <React.Fragment>
-                <Header />
                 <div className='container main-container'>
                     <div className='row'>
                         <Carousel />
+                        <div className='headshot-banner outer-box-heading'>
+                            <h2 className='lite-heading-xl'>A broad selection of courses</h2>
+                            <p className='lite-text-md'>Choose from 183,000 online video courses with new additions published every month</p>
+                        </div>
                         <div className='skills-hub-unit'>
                             <div className='headshot-banner'>
                                 <h2 className='lite-heading-xl'>Expand your career opportunities with Python</h2>

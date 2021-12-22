@@ -1,0 +1,25 @@
+.main-footer{
+    background: #1c1d1f;
+    border-top: 1px solid #3e4143;
+    color: #fff;
+    padding: 4.8rem;
+    min-height: 250px;
+    font-size: 16px;
+    margin-top: 4em;
+}
+.list-white-link{
+    font-size: 15px;
+    padding-right: 2em;
+    li, ul{
+        list-style-type: none;
+        a{
+            display: block;
+            padding: 0.4rem 0;
+        }
+    }
+}
+
+.footer__links{
+    border-bottom: 1px solid #6a6f73;
+    margin-bottom: 2em;
+}

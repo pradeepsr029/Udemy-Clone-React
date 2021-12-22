@@ -1,0 +1,65 @@
+.top-container{
+    background-color: #1c1d1f;
+    padding: 3.2rem 0;
+    color: #fff;
+}
+.clp-component-render{
+    padding-right: 2.5rem;
+}
+.float-course-card{
+    position: relative;
+    .course-landing-rendered{
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+}
+
+.about-course-full{
+    padding-right: 2.5rem;
+    margin-top: 3.2rem;    
+    .what-you-will-learn{
+        border: 1px solid #d1d7dc;
+        padding: 2.4rem;
+        margin-bottom: 2rem;
+        ul,li{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+        li{
+            width: calc(50% - (2.4rem/2));
+            padding-bottom: 12px;
+        }
+        .list-view-info{
+            font-size: 14px;
+            color: #4c4c4c;
+            svg{
+                fill:#1c1d1f;
+                width: 18px;
+                height: 18px;
+            }
+            .full-v--info{
+                padding-left: 10px;
+            }
+        }
+    }
+}
+
+.course-module-loading{
+    color: #ffffff;
+    font-size: 17px;
+    text-align: center;
+    animation: loadingAnimation 1.5s infinite;
+}
+
+@keyframes loadingAnimation {
+    0% {opacity: 0.8; transform: scale(0.95);}
+    100% {top: 1;transform: scale(1);}
+  }
