@@ -5,6 +5,7 @@ import axios, { AxiosResponse } from 'axios';
 import Carousel from '../components/Carousel';
 import CourseCard from '../components/CourseCard';
 import '../styles/home.scss';
+import { connect } from 'react-redux';
 
 class Home extends Component<any, { courses: ICourse[], isApiCallInProgress: boolean }> {
 
@@ -18,6 +19,7 @@ class Home extends Component<any, { courses: ICourse[], isApiCallInProgress: boo
 
     componentWillMount() {
         this.getCoursesList();
+        // console.log(this.props, "===prod")
     }
 
     /**
@@ -27,11 +29,13 @@ class Home extends Component<any, { courses: ICourse[], isApiCallInProgress: boo
     private getCoursesList() {
         axios.get('https://fakestoreapi.com/products').then((response: AxiosResponse) => {
             this.setState({ courses: response.data, isApiCallInProgress: false })
+            //this.props.dispatch({type:"Home", this.state.course})
         }).catch(err => {
             this.setState({ isApiCallInProgress: false })
         });
     }
 
+    //Course component all callback events
     private courseComponentCallbackEvent(event: ICallbackEvent, index: number) {
         switch (event.type) {
             case 'DELETE':
@@ -42,18 +46,25 @@ class Home extends Component<any, { courses: ICourse[], isApiCallInProgress: boo
         }
     }
 
+    //Delete Course base on index
     private deleteCourse(deleteIndex: number) {
         const courses = this.state.courses;
         courses.splice(deleteIndex, 1);
         this.setState({ courses: courses });
     }
 
+    //Return Loader text
     private dataLoading() {
         return (<div className='course-loading'>
             Loading...
         </div>)
     }
 
+    /**
+     * @function courseComponentRendered
+     * @param courses 
+     * @returns {Render All course card}
+     */
     private courseComponentRendered(courses: ICourse[]) {
         return courses.map((course: ICourse, index: number) => {
             return <div key={course.id} className='col-3'>
@@ -91,4 +102,9 @@ class Home extends Component<any, { courses: ICourse[], isApiCallInProgress: boo
     }
 }
 
-export default Home;
+const mapStateToProps = (state: any) => ({
+    homeState: state.homeState
+});
+
+export default connect(mapStateToProps)(Home);
+// export default Home;

@@ -3,8 +3,10 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import AuthDashboard from './childrenRouting/AuthDashboard';
 import NotFound from './containers/NotFound';
 import UnAuthDashboard from './childrenRouting/UnAuthDashboard';
+import { connect } from 'react-redux';
 
-function App() {
+function App(props: any) {
+  //  console.log(props.profile.profileprofileState)
   return (
     <BrowserRouter>
       <Routes>
@@ -16,5 +18,9 @@ function App() {
     </BrowserRouter>
   );
 }
+const mapStateToProps = (state: any) => ({
+  profile: state
+});
 
-export default App;
+export default connect(mapStateToProps)(App);
+//export default App;

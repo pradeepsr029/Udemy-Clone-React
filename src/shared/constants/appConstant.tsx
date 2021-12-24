@@ -1,3 +1,7 @@
+export const REDUCERS_TYPE = {
+    USER_PROFILE: "USER_PROFILE"
+}
+
 export const APP_HEADER_NAV = [
     { name: "Udemy Business", route: "" },
     { name: "Teach on Udemy", route: "" }

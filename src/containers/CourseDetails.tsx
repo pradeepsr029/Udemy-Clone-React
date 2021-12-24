@@ -23,6 +23,11 @@ class CourseDetails extends Component<any, { details: ICourse | null, isApiCallI
         this.getCourseFullDetails(id)
     }
 
+    /**
+     * @function getCourseFullDetails
+     * @param id {course Id}
+     * @summary Get course details base on id
+     */
     private getCourseFullDetails(id: any) {
         axios.get(`https://fakestoreapi.com/products/${id}`).then((response: AxiosResponse) => {
             this.setState({ details: response.data, isApiCallInProgress: false });
